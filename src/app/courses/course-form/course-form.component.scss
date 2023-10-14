@@ -1,0 +1,19 @@
+mat-card {
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+mat-toolbar {
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-card-actions {
+  justify-content: center;
+  gap: 1rem;
+}

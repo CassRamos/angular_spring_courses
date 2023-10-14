@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-content>
+    <mat-toolbar color="primary">Course details</mat-toolbar>
+
+    <form [formGroup]="form">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Name" formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Category" formControlName="category" />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+    <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+  </mat-card-actions>
+</mat-card>
