@@ -17,3 +17,8 @@ mat-card-actions {
   justify-content: center;
   gap: 1rem;
 }
+
+.min-width {
+  width: 100%;
+  min-width: 150px;
+}
