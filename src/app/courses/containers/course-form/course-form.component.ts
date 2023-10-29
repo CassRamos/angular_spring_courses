@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
-import { NonNullableFormBuilder, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  NonNullableFormBuilder,
+  UntypedFormArray,
+  Validators,
+} from '@angular/forms';
 import { CoursesService } from '../../services/courses.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Course } from '../../models/course';
+import { Lesson } from '../../models/lesson';
 
 @Component({
   selector: 'app-course-form',
@@ -12,14 +18,7 @@ import { Course } from '../../models/course';
   styleUrls: ['./course-form.component.scss'],
 })
 export class CourseFormComponent {
-  form = this.formBuilder.group({
-    _id: [''],
-    name: [
-      '',
-      [Validators.required, Validators.minLength(4), Validators.maxLength(40)],
-    ],
-    category: ['', Validators.required],
-  });
+  form!: FormGroup; //Using "!" to permit form initialization in ngOnInit
 
   constructor(
     private formBuilder: NonNullableFormBuilder,
@@ -31,11 +30,43 @@ export class CourseFormComponent {
 
   ngOnInit(): void {
     const course: Course = this.route.snapshot.data['course'];
-    this.form.setValue({
-      _id: course._id,
-      name: course.name,
-      category: course.category,
+    this.form = this.formBuilder.group({
+      _id: [course._id],
+      name: [
+        course.name,
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(40),
+        ],
+      ],
+      category: [course.category, Validators.required],
+      lessons: this.formBuilder.array(this.retrieveLessons(course)),
     });
+  }
+
+  private retrieveLessons(course: Course) {
+    const lessons = [];
+    if (course?.lessons) {
+      course.lessons.forEach((lesson) =>
+        lessons.push(this.CreateLesson(lesson))
+      );
+    } else {
+      lessons.push(this.CreateLesson()); //if lessons are empty, return an empty object
+    }
+    return lessons;
+  }
+
+  private CreateLesson(lesson: Lesson = { id: '', name: '', youtubeUrl: '' }) {
+    return this.formBuilder.group({
+      id: [lesson.id],
+      name: [lesson.name],
+      youtubeUrl: [lesson.youtubeUrl],
+    });
+  }
+
+  getLessonsFormArray() {
+    return (<UntypedFormArray>this.form.get('lessons')).controls;
   }
 
   onSubmit() {

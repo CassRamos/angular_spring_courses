@@ -13,5 +13,5 @@ export const courseResolver: ResolveFn<Observable<Course>> = (
   if (route.params?.['id']) {
     return service.loadById(route.params['id']); //this 'id' refers to :id in courses-routing
   }
-  return of({ _id: '', name: '', category: '' }); //initializing fields with blank
+  return of({ _id: '', name: '', category: '', lessons: [] }); //initializing fields with blank
 };
