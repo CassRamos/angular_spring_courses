@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
+
 import { CoursesComponent } from './containers/courses/courses.component';
 import { CourseFormComponent } from './containers/course-form/course-form.component';
 import { courseResolver } from './guards/course.resolver';
 
-const routes: Routes = [
+export const COURSES_ROUTES: Routes = [
   {
     path: '',
     component: CoursesComponent,
@@ -20,9 +20,3 @@ const routes: Routes = [
     resolve: { course: courseResolver },
   },
 ];
-
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
-})
-export class CoursesRoutingModule {}
