@@ -1,27 +1,81 @@
-# CrudFrontend
+<h1 align="center"> Courses </h1>
+<p align="center">
+  <a href="#-tecnologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>
+  <p align="center">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+</p>
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
+<br>
 
-## Development server
+## 🚀 Tecnologies
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This application lists courses using basic CRUD operations with back-end code.
 
-## Code scaffolding
+- Angular
+- SCSS
+- CORS
+- Git & Github 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ <br>
 
-## Build
+## 💻 Project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This project offers a straightforward API for managing courses and lessons, featuring robust validations and adhering to SOLID principles in its design.
 
-## Running unit tests
+<br>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## :memo: License
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+This project is under license from MIT
 
-## Further help
+<br>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Images 
+
+<br>
+
+### Home page
+ - <p> This page contains all registered courses : </p>
+
+<br>
+ 
+<p align="center">
+  <img alt="Courses list" src="./imgs/home.png" width="80%">
+</p> 
+
+<br>
+
+### Register a course
+ - <p> This page contains a basic form with validations to register a course: </p>
+ 
+<p align="center">
+  <img alt="Register course" src="./imgs/create.png" width="80%">
+</p> 
+
+<br>
+
+ - <p> After creating a course, the list is updated: </p>
+
+<br>
+
+<p align="center">
+  <img alt="Register course" src="./imgs/after_create.png" width="80%">
+</p> 
+
+<br>
+
+### Other features
+ - <p> To update a course, delete and list limited courses on a page you, can use the icons: </p>
+ 
+<p align="center">
+  <img alt="Features" src="./imgs/pagination.png" width="80%">
+</p> 
+
+<br>
+
+<p>Thanks for your attention, see you next time 💜</p>
+
